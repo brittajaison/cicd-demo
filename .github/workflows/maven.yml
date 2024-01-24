@@ -53,7 +53,7 @@ jobs:
       - name: Set up JDK 20
         uses: actions/setup-java@v3
         with:
-          java-version: '20'
+          java-version: '17'
           distribution: 'temurin'
           cache: maven
 
@@ -71,7 +71,7 @@ jobs:
       - name: Set up JDK 20
         uses: actions/setup-java@v3
         with:
-          java-version: '20'
+          java-version: '17'
           distribution: 'temurin'
           cache: maven
 
@@ -95,7 +95,7 @@ jobs:
           SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
   
-   snyk:
+snyk:
     needs: test
     runs-on: ubuntu-latest
     env:
