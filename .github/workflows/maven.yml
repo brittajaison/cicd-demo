@@ -104,9 +104,6 @@ jobs:
     steps:
       - name: Checkout Source Codes
         uses: actions/checkout@v3
-      
-      - name: Authenticate with Snyk
-        run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
       - name: Run Snyk to check for vulnerabilities
         id: snyk
