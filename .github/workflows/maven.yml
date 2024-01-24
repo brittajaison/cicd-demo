@@ -106,10 +106,14 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Snyk to check for vulnerabilities
+        id: snyk
         uses: snyk/actions/maven@master
-        continue-on-error: true
         with:
-          args: --sarif
+         args: --sarif
+
+      - name: Save SARIF results
+        run: echo "${{ steps.snyk.outputs.sarif }}" > snyk-output.sarif
+
 
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
