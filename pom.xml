@@ -18,6 +18,7 @@
 		<java.version>17</java.version>
 
 		<sonar.organization>brittajaison</sonar.organization>
+		<sonar.projectKey>brittajaison_cicd-demo</sonar.projectKey>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>

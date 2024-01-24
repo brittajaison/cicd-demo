@@ -34,14 +34,14 @@ jobs:
     
     - name: Create Package
       run: |
-        mkdir staging 
-        cp target/*.jar staging
+        mkdir stage 
+        cp target/*.jar stage
 
     - name: Upload Package
       uses: actions/upload-artifact@v3
       with:
         name: Package
-        path: staging
+        path: stage
 
   test:
     runs-on: ubuntu-latest
