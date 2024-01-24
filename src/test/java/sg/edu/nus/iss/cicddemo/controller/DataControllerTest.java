@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import sg.edu.nus.iss.cicddemo.controller.DataController;
 
 @SpringBootTest
-public class DataControllerTest {
+ class DataControllerTest {
 	
 	@Autowired
 	DataController dataController;
