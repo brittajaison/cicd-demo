@@ -114,7 +114,7 @@ jobs:
           args: --sarif
           
       - name: Save SARIF results
-        run: echo "${{ steps.snyk.outputs.sarif }}" > snyk-output.sarif
+  #      run: echo "${{ steps.snyk.outputs.sarif }}" > snyk-output.sarif
         run: |
               echo "SARIF contents:"
               cat snyk-output.sarif
