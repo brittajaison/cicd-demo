@@ -117,13 +117,13 @@ jobs:
         run: |
           echo "Current Directory: $(pwd)"
           echo "Contents of Current Directory: $(ls -la)"
-          echo "Snyk Output Path: $(echo snyk-output*.sarif)"
+          echo "Snyk Output Path: $(echo snyk*.sarif)"
           echo "Secret: ${{ secrets.SNYK_TOKEN }}"
 
       - name: Save SARIF results
         run: |
           echo "SARIF contents:"
-          cat snyk-output.sarif
+          cat snyk.sarif
           echo "End of SARIF contents."
 
       - name: Upload result to GitHub Code Scanning
