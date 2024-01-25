@@ -98,7 +98,6 @@ jobs:
   snyk:
     needs: test
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Source Code for vulnerabilities
         uses: actions/checkout@v3
