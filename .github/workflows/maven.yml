@@ -115,6 +115,10 @@ jobs:
           
       - name: Save SARIF results
         run: echo "${{ steps.snyk.outputs.sarif }}" > snyk-output.sarif
+        run: |
+              echo "SARIF contents:"
+              cat snyk-output.sarif
+              echo "End of SARIF contents."
 
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
