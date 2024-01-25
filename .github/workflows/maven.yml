@@ -111,7 +111,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
         with:
-          args: --sarif
+          args: --sarif-file-output=snyk.sarif
 
       - name: Debugging Info
         run: |
@@ -129,4 +129,4 @@ jobs:
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: snyk-output.sarif
+          sarif_file: snyk.sarif
