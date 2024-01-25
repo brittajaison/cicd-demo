@@ -114,18 +114,17 @@ jobs:
           args: --sarif
 
       - name: Debugging Info
-          run: |
-            echo "Current Directory: $(pwd)"
-            echo "Contents of Current Directory: $(ls -la)"
-            echo "Snyk Output Path: $(echo snyk-output*.sarif)"
-            echo ${{ secrets.SNYK_TOKEN }}
-          
+        run: |
+          echo "Current Directory: $(pwd)"
+          echo "Contents of Current Directory: $(ls -la)"
+          echo "Snyk Output Path: $(echo snyk-output*.sarif)"
+          echo ${{ secrets.SNYK_TOKEN }}
+
       - name: Save SARIF results
-  #      run: echo "${{ steps.snyk.outputs.sarif }}" > snyk-output.sarif
-          run: |
-            echo "SARIF contents:"
-            cat snyk-output.sarif
-            echo "End of SARIF contents."
+        run: |
+          echo "SARIF contents:"
+          cat snyk-output.sarif
+          echo "End of SARIF contents."
 
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
