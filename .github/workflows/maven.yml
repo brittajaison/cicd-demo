@@ -130,3 +130,28 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: snyk.sarif
+
+deploy:
+    name: Deploy
+    # Depends on the 'build' job
+    needs: build
+    # Run on Ubuntu using the latest version
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Download JAR
+        uses: actions/download-artifact@v2
+        with:
+          name: artifact
+
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v13
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          use_existing_version_if_available: false
+          application_name: Spring-Boot-DataRest
+          environment_name: Spring-Boot-DataRest-env
+          version_label: ${{ github.sha }}
+          region: us-east-1b
+          deployment_package: cicd-demo-0.0.1-SNAPSHOT.jar
