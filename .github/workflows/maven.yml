@@ -135,12 +135,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           name: artifact
-      
-      - name: Debug Artifact Contents
-        run: |
-          echo "Contents of Downloaded Directory:"
-          ls -la path/to/download/directory
-
+          path: /home/runner/work/cicd-demo/cicd-demo
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v13
