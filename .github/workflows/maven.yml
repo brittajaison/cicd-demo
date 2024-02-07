@@ -135,7 +135,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           name: artifact
-          path: /home/runner/work/cicd-demo/cicd-demo
+          path: /home/runner/work/cicd-demo/cicd-demo/target
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
