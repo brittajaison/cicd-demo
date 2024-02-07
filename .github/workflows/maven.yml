@@ -157,4 +157,5 @@ jobs:
           environment_name: Spring-Boot-DataRest-env
           version_label: ${{ github.sha }}
           region: us-east-1
-          deployment_package: /home/runner/work/cicd-demo/cicd-demo/target/cicd_demo-0.0.1-SNAPSHOT.jar
+          deployment_package: /home/runner/work/cicd-demo/cicd-demo/target/cicd-demo-0.0.1-SNAPSHOT.jar
+                             
